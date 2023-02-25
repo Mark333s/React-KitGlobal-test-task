@@ -15,7 +15,7 @@ const StyledHeader = styled.div`
 export const Header: React.FC = () => {
     return (
         <StyledHeader>
-            <Title>Pizza Magazine</Title>
+            <Title>Pizzas Magazine</Title>
             <ShoppingCartButton />
         </StyledHeader>
     );

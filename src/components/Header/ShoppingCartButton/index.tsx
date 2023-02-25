@@ -17,7 +17,7 @@ border: aliceblue;
     background-color: orange;
 }
 `;
-const Image = styled.img.attrs(({ src }) => ({
+export const Image = styled.img.attrs(({ src }) => ({
     src: src,
     alt: 'shopping cart',
 }))`

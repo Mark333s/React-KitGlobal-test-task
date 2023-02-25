@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { TextProps } from '../../@types/textTypes';
 
-
-
-const TextStyled = styled.p`
-   font-size: 16px;
+const TextStyled = styled.h2`
+   font-size 24px;
+   font-weight: bold
 `;
 
-export const Text:React.FC<TextProps> = ({children}) => {
+export const Text: React.FC<TextProps> = ({ children }) => {
     return (
         <TextStyled>{children}</TextStyled>
     );

@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-
-type TitleTextProps = {
-    children: string;
-}
+import { TextProps } from '../../../@types/textTypes';
 
 const StyledTitle = styled.h1`  
 font-size: 18px
 font-weight: bold
 `;
 
-export const Title: React.FC<TitleTextProps> = ({ children }) => {
+
+export const Title: React.FC<TextProps> = ({ children }) => {
     return (
-        <StyledTitle>{children}</StyledTitle>
+        <>
+            <StyledTitle>{children}</StyledTitle>
+        </>
     );
 };
