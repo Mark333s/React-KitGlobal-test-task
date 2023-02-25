@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Basket } from './pages/Basket';
 import { Main } from './pages/Main';
 
-const App = () => {
+const App:React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Main/>} />

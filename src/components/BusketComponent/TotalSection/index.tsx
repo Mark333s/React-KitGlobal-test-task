@@ -36,7 +36,7 @@ const AmountText = styled.span`
    color: #fe5f1e;
 `;
 
-export const TotalSection: React.FC<TotalSectionProps> = ({totalCount, totalPrice}) => {
+export const TotalSection: React.FC<TotalSectionProps> = React.memo(({totalCount, totalPrice}) => {
     return (
         <TotalSectionStyled>
             <CountContainer>
@@ -49,4 +49,4 @@ export const TotalSection: React.FC<TotalSectionProps> = ({totalCount, totalPric
             </AmountContainer>
         </TotalSectionStyled>
     );
-};
+});

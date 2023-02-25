@@ -34,7 +34,7 @@ export const Image = styled.img.attrs(({ src }) => ({
     padding: 5px
   `;
 
-export const ShoppingCartButton: React.FC = () => {
+export const ShoppingCartButton: React.FC = React.memo(() => {
     const { items, totalPrice } = useSelector(selectCart);
     const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
 
@@ -45,4 +45,4 @@ export const ShoppingCartButton: React.FC = () => {
             <ButtonText>{totalCount}</ButtonText>
         </ShoppingCartButtonStyled>
     );
-};
+});

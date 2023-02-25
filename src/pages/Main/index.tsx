@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Header } from '../../components/Header';
 import { List } from '../../components/List';
 
+
 const MainWrapper = styled.div`
   margin: 60px;
   padding: 50px;

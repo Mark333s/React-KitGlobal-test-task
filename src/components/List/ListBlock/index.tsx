@@ -10,6 +10,7 @@ import { useAppDispatch } from '../../../redux/store';
 import { PizzaBlock } from '../PizzaBlock';
 
 
+
 import styled from 'styled-components';
 
 const ListBlockStyled = styled.div`
@@ -19,7 +20,13 @@ const ListBlockStyled = styled.div`
    margin-top: 100px    
 `;
 
-export const ListBlock = () => {
+const EmptyText = styled.h2`
+  text-align: center;
+  margin: 100px;
+`;
+
+
+export const ListBlock:React.FC = React.memo(() => {
 
     const pizzas = useSelector(selectPizzas);
     const dispatch = useAppDispatch();
@@ -33,7 +40,7 @@ export const ListBlock = () => {
     ));
     return (
         <ListBlockStyled>
-            {items}
+            {pizzas.length > 0 ? items : <EmptyText>Сталась помилка</EmptyText>}
         </ListBlockStyled>
     );
-};
+});

@@ -22,11 +22,12 @@ const Button = styled.button`
 export const TopSection: React.FC = () => {
   const dispatch = useAppDispatch();
 
-  const onClickClear = () => {
+  const onClickClear = React.useCallback(() => {
     if (window.confirm("Are you sure to clear bucket?")) {
       dispatch(clearItems());
     }
-  };
+  }, []);
+
 
   return (
     <TopSectionStyled>

@@ -134,29 +134,30 @@ const CancelButton = styled.button`
 
 
 
-export const PizzaSection: React.FC<CartItem> = ({ id, title, price, imageUrl, count }) => {
+
+export const PizzaSection: React.FC<CartItem> = React.memo(({ id, title, price, imageUrl, count }) => {
   const dispatch = useAppDispatch();
 
-  const onClickPlus = () => {
+
+  const onClickPlus = React.useCallback(() => {
     dispatch(
       //@ts-ignore
       addItem({
         id,
       })
     );
-  };
+  }, []);
 
-  const onClickMinus = () => {
+
+  const onClickMinus = React.useCallback(() => {
     dispatch(minusItem(id));
-  };
+  }, []);
 
-  const onClickRemove = () => {
+  const onClickRemove = React.useCallback(() => {
     if (window.confirm("Are you sure to remove pizza?")) {
       dispatch(removeItem(id));
     }
-
-  };
-
+  }, []);
 
   return (
     <PizzaSectionStyled>
@@ -183,4 +184,4 @@ export const PizzaSection: React.FC<CartItem> = ({ id, title, price, imageUrl, c
       </CancelButton>
     </PizzaSectionStyled>
   );
-};
+});

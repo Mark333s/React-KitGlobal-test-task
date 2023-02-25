@@ -18,11 +18,11 @@ const BottomSectionStyled = styled.div`
    margin-top: 30px;
 `;
 
-export const BottomSection: React.FC<BottomSectionProps> = ({ price, addedCount, onClickAdd }) => {
+export const BottomSection: React.FC<BottomSectionProps> = React.memo(({ price, addedCount, onClickAdd }) => {
     return (
         <BottomSectionStyled>
             <PriceText>{price} грн</PriceText>
             <PizzaButton onClickAdd={onClickAdd} addedCount={addedCount}/>
         </BottomSectionStyled>
     );
-};
+});

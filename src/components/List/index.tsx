@@ -11,8 +11,6 @@ const ListStyled = styled.div`
 `;
 
 export const List: React.FC = () => {
-
-
     return (
         <ListStyled>
             <Text>Піци</Text>

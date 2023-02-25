@@ -15,19 +15,25 @@ const BusketComponentStyled = styled.div`
    padding: 100px;
 `;
 
-export const BusketComponent: React.FC = () => {
+const EmptyText = styled.h2`
+  text-align: center;
+  margin: 100px;
+`;
+
+
+export const BusketComponent: React.FC = React.memo(() => {
     const { items, totalPrice } = useSelector(selectCart);
-     const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+    const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
     const pizzas = items.map((obj: CartItem) => (
-        <PizzaSection {...obj} key={obj.id}  />
+        <PizzaSection {...obj} key={obj.id} />
     ));
     return (
         <BusketComponentStyled>
             <TopSection />
-            {pizzas}
-            <TotalSection totalCount={totalCount} totalPrice={totalPrice}/>
+            {!totalPrice ? <EmptyText>Корзина Пуста</EmptyText> : pizzas}
+            <TotalSection totalCount={totalCount} totalPrice={totalPrice} />
             <BottomSection />
         </BusketComponentStyled>
     );
-};
+});

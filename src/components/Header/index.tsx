@@ -18,9 +18,10 @@ export const NavbarLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const Header: React.FC = () => {
+export const Header: React.FC = React.memo(() => {
     const location = useLocation();
     const pathname = location.pathname;
+    
     return (
         <StyledHeader>
             <Title>Pizzas Magazine</Title>
@@ -33,4 +34,4 @@ export const Header: React.FC = () => {
             </NavbarLink>
         </StyledHeader>
     );
-};
+});
