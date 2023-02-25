@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TextProps } from '../../../@types/textTypes';
 
 const PizzaButtonTextStyled = styled.p`
   font-size: 18px
 `;
+   type PizzaButtonTextProps = {
+    children: React.ReactNode
+   }
 
-export const PizzaButtonText: React.FC<TextProps> = ({ children }) => {
+export const PizzaButtonText: React.FC<PizzaButtonTextProps> = ({ children }) => {
     return (
         <PizzaButtonTextStyled>{children}</PizzaButtonTextStyled>
     );

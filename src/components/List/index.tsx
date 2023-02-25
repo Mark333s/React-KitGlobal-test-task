@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { getPizzasFetch } from '../../redux/slices/pizzasSlice';
-import { selectPizzas } from '../../redux/slices/pizzasSlice';
-import { useAppDispatch } from '../../redux/store';
-
-
+import React from 'react';
 import styled from 'styled-components';
+
 import { Text } from './Text';
 import { ListBlock } from './ListBlock';
 
@@ -20,7 +15,7 @@ export const List: React.FC = () => {
 
     return (
         <ListStyled>
-            <Text>Pizzas</Text>
+            <Text>Піци</Text>
             <ListBlock />
         </ListStyled>
     );

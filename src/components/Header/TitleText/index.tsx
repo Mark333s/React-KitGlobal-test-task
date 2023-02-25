@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { TextProps } from '../../../@types/textTypes';
 
 const StyledTitle = styled.h1`  

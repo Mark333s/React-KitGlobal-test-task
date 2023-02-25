@@ -1,5 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+
+import { selectCart } from '../../../redux/slices/cartSlice';
+
 import { SHOPPINGCART } from '../../../assets/constants/img';
 import { ButtonText } from './ButtonText';
 
@@ -11,9 +15,13 @@ background-color: #f58113;
 display: flex;
 justify-content: center;
 align-items: center;
-border: aliceblue;
+color: white;
+border: solid 1px;
+background-color: #fe5f1e;
+border-color: #fe5f1e; 
 
 &:hover{
+    border-color: orange;
     background-color: orange;
 }
 `;
@@ -27,11 +35,14 @@ export const Image = styled.img.attrs(({ src }) => ({
   `;
 
 export const ShoppingCartButton: React.FC = () => {
+    const { items, totalPrice } = useSelector(selectCart);
+    const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+
     return (
         <ShoppingCartButtonStyled>
-            <ButtonText>24  $  |</ButtonText>
+            <ButtonText>{totalPrice}  ₴  |</ButtonText>
             <Image src={SHOPPINGCART} />
-            <ButtonText>3</ButtonText>
+            <ButtonText>{totalCount}</ButtonText>
         </ShoppingCartButtonStyled>
     );
 };

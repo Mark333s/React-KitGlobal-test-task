@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 import { Title } from './TitleText';
 import { ShoppingCartButton } from './ShoppingCartButton';
-import { Link } from 'react-router-dom';
 
 
 

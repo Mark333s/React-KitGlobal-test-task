@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { PizzaButton } from './PizzaButton';
 import { PriceText } from './PriceText';
 
-type BottomSectionProps = {
-    price: number
+export type BottomSectionProps = {
+    price: number;
+    addedCount: number;
+    onClickAdd: () => void
+
 }
 
 const BottomSectionStyled = styled.div`
@@ -14,11 +18,11 @@ const BottomSectionStyled = styled.div`
    margin-top: 30px;
 `;
 
-export const BottomSection: React.FC<BottomSectionProps> = ({ price }) => {
+export const BottomSection: React.FC<BottomSectionProps> = ({ price, addedCount, onClickAdd }) => {
     return (
         <BottomSectionStyled>
             <PriceText>{price} грн</PriceText>
-            <PizzaButton />
+            <PizzaButton onClickAdd={onClickAdd} addedCount={addedCount}/>
         </BottomSectionStyled>
     );
 };

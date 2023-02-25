@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { TextProps } from '../../@types/textTypes';
 
 const TextStyled = styled.h2`
-   font-size 24px;
+   font-size 28px;
    font-weight: bold
 `;
 

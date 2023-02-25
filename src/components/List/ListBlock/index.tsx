@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+
+import { PizzaItem } from '../../../@types/dataTypes';
+
 import { getPizzasFetch } from '../../../redux/slices/pizzasSlice';
 import { selectPizzas } from '../../../redux/slices/pizzasSlice';
 import { useAppDispatch } from '../../../redux/store';
+
 import { PizzaBlock } from '../PizzaBlock';
-import { PizzaItem } from '../../../@types/dataTypes';
 
 
 import styled from 'styled-components';

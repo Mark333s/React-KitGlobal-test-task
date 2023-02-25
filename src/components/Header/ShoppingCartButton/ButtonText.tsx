@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { TextProps } from '../../../@types/textTypes';
+type ButtonTextProps = {
+  children: React.ReactNode
+ }
 
 const ButtonTextStyled = styled.p`
   font-size: 15px;
@@ -9,8 +11,7 @@ const ButtonTextStyled = styled.p`
   padding-righ: 16px
 `;
 
-
-export const ButtonText: React.FC<TextProps> = ({ children }) => {
+export const ButtonText: React.FC<ButtonTextProps> = ({ children }) => {
     return (
         <ButtonTextStyled>{children}</ButtonTextStyled>
     );
