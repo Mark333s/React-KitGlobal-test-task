@@ -37,6 +37,9 @@ const AmountText = styled.span`
 `;
 
 export const TotalSection: React.FC<TotalSectionProps> = React.memo(({totalCount, totalPrice}) => {
+    //This component displays the total number of pizzas in the basket and their price
+    //The total number of pizzas in the cart is calculated here
+
     return (
         <TotalSectionStyled>
             <CountContainer>

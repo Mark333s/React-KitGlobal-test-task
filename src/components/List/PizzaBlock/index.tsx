@@ -21,8 +21,8 @@ const PizzaBlockStyled = styled.div`
   
 `;
 const Image = styled.img.attrs(({ src }) => ({
-    src: src,
-    alt: 'shopping cart',
+  src: src,
+  alt: 'shopping cart',
 }))`
     width: 250px;
     height: 250px;
@@ -31,12 +31,15 @@ const Image = styled.img.attrs(({ src }) => ({
 
 
 export const PizzaBlock: React.FC<PizzaItem> = React.memo(({ id, title, price, imageUrl }) => {
+  //A block that renders pizza
   const dispatch = useAppDispatch();
   const cartItem = useSelector(selectCartItemById(id));
 
   const addedCount = cartItem ? cartItem.count : 0;
+  //Number of pizzas added to cart
 
-  const onClickAdd = React.useCallback(()=>{
+  const onClickAdd = React.useCallback(() => {
+    //Here we add a pizza to the cart
     const item: CartItem = {
       id,
       title,
@@ -48,10 +51,10 @@ export const PizzaBlock: React.FC<PizzaItem> = React.memo(({ id, title, price, i
   }, []);
 
   return (
-      <PizzaBlockStyled>
-          <Image src={imageUrl} />
-          <PizzaTitleText>{title}</PizzaTitleText>
-          <BottomSection price={price} onClickAdd={onClickAdd} addedCount={addedCount}/>
-      </PizzaBlockStyled>
+    <PizzaBlockStyled>
+      <Image src={imageUrl} />
+      <PizzaTitleText>{title}</PizzaTitleText>
+      <BottomSection price={price} onClickAdd={onClickAdd} addedCount={addedCount} />
+    </PizzaBlockStyled>
   );
 });

@@ -36,11 +36,13 @@ export const Image = styled.img.attrs(({ src }) => ({
 
 export const ShoppingCartButton: React.FC = React.memo(() => {
     const { items, totalPrice } = useSelector(selectCart);
+    //Here we get the list of pizzas in the basket and their total price from redux
 
     const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+     //The total number of pizzas in the cart is calculated here
 
     React.useEffect(() => {
-
+         //This is where we store our pizzas in local storage
         const json = JSON.stringify(items);
         localStorage.setItem("cart", json);
         return () => {

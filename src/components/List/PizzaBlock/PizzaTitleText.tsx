@@ -9,6 +9,7 @@ const PizzaTitleTextStyled = styled.p`
 `;
 
 export const PizzaTitleText: React.FC<TextProps> = ({children}) => {
+  //The name of the pizza
   return (
     <PizzaTitleTextStyled>{children}</PizzaTitleTextStyled>
   );

@@ -7,6 +7,7 @@ import {
 } from "../slices/pizzasSlice";
 
 const getPizzas = async () => {
+  //Request to the server
   const { data } = await axios.get<PizzaItem[]>(
     "https://63d2bb2406556a0fdd4353c4.mockapi.io/items"
   );

@@ -12,6 +12,7 @@ const PriceTextStyled = styled.p`
 `;
 
 export const PriceText: React.FC<PriceTextProps> = ({ children }) => {
+    //The price of pizza
     return (
         <PriceTextStyled>{children}</PriceTextStyled>
     );

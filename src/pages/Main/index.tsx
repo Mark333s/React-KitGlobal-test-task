@@ -13,7 +13,7 @@ const MainWrapper = styled.div`
 `;
 
 export const Main: React.FC = () => {
-
+    //The main page
     return (
         <MainWrapper>
             <Header />

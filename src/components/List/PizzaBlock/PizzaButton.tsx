@@ -27,7 +27,7 @@ type PizzaButtonProps = Omit<BottomSectionProps, "price">
 
 
 export const PizzaButton: React.FC<PizzaButtonProps> = React.memo(({ addedCount, onClickAdd }) => {
-
+    //Add button
     return (
         <PizzaButtonStyled onClick={onClickAdd}>
             <PizzaButtonText>+ Добавити  {addedCount > 0 && <i>{addedCount}</i>}</PizzaButtonText>

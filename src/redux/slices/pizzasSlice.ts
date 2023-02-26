@@ -15,13 +15,16 @@ export const pizzasSlize = createSlice({
   initialState,
   reducers: {
     getPizzasFetch(state){
+      //Request to the server
       state.isLoading = true;
     },
     getPizzasSuccess(state, action){
+      //Request is succes
       state.pizzas = action.payload;
       state.isLoading = false;
     },
     getPizzasFailure(state){
+      //Request is failure
       state.isLoading = false;
     }
 

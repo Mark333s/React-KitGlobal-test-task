@@ -19,6 +19,7 @@ const BottomSectionStyled = styled.div`
 `;
 
 export const BottomSection: React.FC<BottomSectionProps> = React.memo(({ price, addedCount, onClickAdd }) => {
+    //The price and the button for adding a pizza to the cart are displayed here
     return (
         <BottomSectionStyled>
             <PriceText>{price} грн</PriceText>

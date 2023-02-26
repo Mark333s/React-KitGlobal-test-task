@@ -20,9 +20,12 @@ const Button = styled.button`
  `;
 
 export const TopSection: React.FC = () => {
+  //This component is responsible for drawing the header of the shopping cart and the clear button
+
   const dispatch = useAppDispatch();
 
   const onClickClear = React.useCallback(() => {
+    //Basket cleaning function
     if (window.confirm("Are you sure to clear bucket?")) {
       dispatch(clearItems());
     }

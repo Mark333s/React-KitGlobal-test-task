@@ -49,6 +49,8 @@ export const NavbarLink = styled(Link)`
 `;
 
 export const BottomSection: React.FC = () => {
+    // The lower section of the basket. Here are the buttons "go back", "pay"
+
     return (
         <BottomSectionStyled>
             <NavbarLink to='/'>

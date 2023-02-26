@@ -13,6 +13,7 @@ const BasketStyled = styled.div`
 `;
 
 export const Basket: React.FC = () => {
+    //Cart page
     return (
         <BasketStyled>
             <Header />

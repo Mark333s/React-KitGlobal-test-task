@@ -19,6 +19,7 @@ export const Image = styled.img.attrs(({ src }) => ({
   `;
 
 export const TitleTextComponent = () => {
+    //shopping cart title
     return (
         <TitleTextComponentStyled>
             <Image src={SHOPPINGCARTBLACK} />

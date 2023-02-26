@@ -27,12 +27,15 @@ const EmptyText = styled.h2`
 
 
 export const ListBlock:React.FC = React.memo(() => {
+    //The block in which all pizzas are rendered
 
     const pizzas = useSelector(selectPizzas);
+    //Here we get all the pizzas
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(getPizzasFetch());
+        //Sending a request to the server to get a list of pizzas
     }, [dispatch]);
 
     const items = pizzas.map((obj: PizzaItem) => (

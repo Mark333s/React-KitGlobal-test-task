@@ -41,7 +41,7 @@ const CountContainer = styled.div`
 
 const MinusDisabledButton = styled.button`
     cursor: pointer;
-    font-size: 18px;
+    font-size: 28px;
     width: 32px;
     height: 32px;
     display: flex;
@@ -58,15 +58,16 @@ const MinusdButton = styled.button`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 28px;
     width: 32px;
     height: 32px;
     border: solid 1px;
     border-radius: 22px;
-    opacity: 0.4;
     border-color: #fe5f1e;
 
     &:hover{
-      background-color: #fe5f1e
+      background-color: #fe5f1e;
+      color: white
      }
 `;
 
@@ -75,30 +76,17 @@ const PlusButton = styled.button`
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   font-size: 28px;
    width: 32px;
    height: 32px;
    border: solid 1px;
    border-radius: 22px;
-   opacity: 0.4;
    border-color: #fe5f1e;
 
    &:hover{
     background-color: #fe5f1e;
-   }
-`;
-
-const TextButton = styled.p`
-   font-size: 34px;
-   color:#fe5f1e;
-
-   &:hover{
     color: white;
    }
-`;
-
-const TextButtonDisabled = styled.p`
-   font-size: 34px;
-   color:#787878;
 `;
 
 const CountText = styled.p`
@@ -122,7 +110,6 @@ const CancelButton = styled.button`
   height: 32px;
   border: solid 1px;
   border-radius: 22px;
-  opacity: 0.4;
   border-color: #787878;
 
   &:hover{
@@ -136,10 +123,14 @@ const CancelButton = styled.button`
 
 
 export const PizzaSection: React.FC<CartItem> = React.memo(({ id, title, price, imageUrl, count }) => {
+  //The component responsible for rendering pizzas in the shopping cart.
+  
+
   const dispatch = useAppDispatch();
 
 
   const onClickPlus = React.useCallback(() => {
+    //Function to increase the number of pizzas in the cart
     dispatch(
       addItem({
         id,
@@ -153,10 +144,12 @@ export const PizzaSection: React.FC<CartItem> = React.memo(({ id, title, price, 
 
 
   const onClickMinus = React.useCallback(() => {
+    //A function to reduce the number of pizzas in the cart
     dispatch(minusItem(id));
   }, []);
 
   const onClickRemove = React.useCallback(() => {
+    //Function for removing pizza from basket
     if (window.confirm("Are you sure to remove pizza?")) {
       dispatch(removeItem(id));
     }
@@ -169,17 +162,11 @@ export const PizzaSection: React.FC<CartItem> = React.memo(({ id, title, price, 
         <PizzaName>{title}</PizzaName>
       </PizzaContainerStyled>
       <CountContainer>
-        {count < 2 ? <MinusDisabledButton>
-          <TextButtonDisabled>-</TextButtonDisabled>
-        </MinusDisabledButton> : <MinusdButton onClick={onClickMinus}>
-          <TextButton>-</TextButton>
-        </MinusdButton>
+        {count < 2 ? <MinusDisabledButton>-</MinusDisabledButton> : <MinusdButton onClick={onClickMinus}>-</MinusdButton>
         }
 
         <CountText>{count}</CountText>
-        <PlusButton onClick={onClickPlus}>
-          <TextButton>+</TextButton>
-        </PlusButton>
+        <PlusButton onClick={onClickPlus}>+</PlusButton>
       </CountContainer>
       <AmountText>{count * price}  ₴</AmountText>
       <CancelButton onClick={onClickRemove}>

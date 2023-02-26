@@ -11,6 +11,7 @@ const ListStyled = styled.div`
 `;
 
 export const List: React.FC = () => {
+    //The component renders the title and list of pizzas
     return (
         <ListStyled>
             <Text>Піци</Text>
