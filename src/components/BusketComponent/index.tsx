@@ -23,7 +23,19 @@ const EmptyText = styled.h2`
 
 export const BusketComponent: React.FC = React.memo(() => {
     const { items, totalPrice } = useSelector(selectCart);
+
+
+    React.useEffect(() => {
+        const json = JSON.stringify(items);
+        localStorage.setItem("cart", json);
+        return () => {
+            localStorage.clear();
+        };
+    }, [items]);
+
     const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+
+
 
     const pizzas = items.map((obj: CartItem) => (
         <PizzaSection {...obj} key={obj.id} />
@@ -31,7 +43,7 @@ export const BusketComponent: React.FC = React.memo(() => {
     return (
         <BusketComponentStyled>
             <TopSection />
-            {!totalPrice ? <EmptyText>Корзина Пуста</EmptyText> : pizzas}
+            {pizzas.length > 0 ? pizzas : <EmptyText>Корзина пуста</EmptyText>}
             <TotalSection totalCount={totalCount} totalPrice={totalPrice} />
             <BottomSection />
         </BusketComponentStyled>

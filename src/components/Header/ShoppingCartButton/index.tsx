@@ -36,7 +36,17 @@ export const Image = styled.img.attrs(({ src }) => ({
 
 export const ShoppingCartButton: React.FC = React.memo(() => {
     const { items, totalPrice } = useSelector(selectCart);
+
     const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+
+    React.useEffect(() => {
+
+        const json = JSON.stringify(items);
+        localStorage.setItem("cart", json);
+        return () => {
+            localStorage.clear();
+        };
+    }, [items]);
 
     return (
         <ShoppingCartButtonStyled>
