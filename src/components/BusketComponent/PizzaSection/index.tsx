@@ -141,9 +141,12 @@ export const PizzaSection: React.FC<CartItem> = React.memo(({ id, title, price, 
 
   const onClickPlus = React.useCallback(() => {
     dispatch(
-      //@ts-ignore
       addItem({
         id,
+        title,
+        price,
+        imageUrl,
+        count,
       })
     );
   }, []);
