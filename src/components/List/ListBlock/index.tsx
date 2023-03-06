@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { PizzaItem } from '../../../@types/dataTypes';
+import { PizzaItem } from '../../../redux/types/dataTypes';
 
 import { getPizzasFetch } from '../../../redux/slices/pizzasSlice';
 import { selectPizzas } from '../../../redux/slices/pizzasSlice';
@@ -26,7 +26,7 @@ const EmptyText = styled.h2`
 `;
 
 
-export const ListBlock:React.FC = React.memo(() => {
+export const ListBlock: React.FC = React.memo(() => {
     //The block in which all pizzas are rendered
 
     const pizzas = useSelector(selectPizzas);

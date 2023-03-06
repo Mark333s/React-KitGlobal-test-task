@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { PizzaItem } from '../../../@types/dataTypes';
-import { CartItem } from '../../../@types/dataTypes';
+import { PizzaItem } from '../../../redux/types/dataTypes';
+import { CartItem } from '../../../redux/types/dataTypes';
 
 import { addItem, selectCartItemById } from '../../../redux/slices/cartSlice';
 import { useAppDispatch } from '../../../redux/store';

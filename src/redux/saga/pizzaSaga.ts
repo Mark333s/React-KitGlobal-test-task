@@ -1,10 +1,7 @@
 import axios from "axios";
 import { call, put, takeEvery } from "redux-saga/effects";
-import { PizzaItem } from "../../@types/dataTypes";
-import {
-  getPizzasFailure,
-  getPizzasSuccess,
-} from "../slices/pizzasSlice";
+import { PizzaItem } from "../types/dataTypes";
+import { getPizzasFailure, getPizzasSuccess } from "../slices/pizzasSlice";
 
 const getPizzas = async () => {
   //Request to the server

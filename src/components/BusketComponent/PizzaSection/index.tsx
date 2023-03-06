@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { CartItem } from '../../../@types/dataTypes';
+import { CartItem } from '../../../redux/types/dataTypes';
 
 import { addItem, minusItem, removeItem } from '../../../redux/slices/cartSlice';
 import { useAppDispatch } from '../../../redux/store';
@@ -124,7 +124,7 @@ const CancelButton = styled.button`
 
 export const PizzaSection: React.FC<CartItem> = React.memo(({ id, title, price, imageUrl, count }) => {
   //The component responsible for rendering pizzas in the shopping cart.
-  
+
 
   const dispatch = useAppDispatch();
 

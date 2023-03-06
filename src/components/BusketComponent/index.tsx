@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { CartItem } from '../../@types/dataTypes';
+import { CartItem } from '../../redux/types/dataTypes';
 
 import { selectCart } from '../../redux/slices/cartSlice';
 

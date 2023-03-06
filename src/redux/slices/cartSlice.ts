@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CartItem, CartSliceState, PizzaItem } from "../../@types/dataTypes";
+import { CartItem, CartSliceState, PizzaItem } from "../types/dataTypes";
 import { calcTotalPrice } from "../../utils/calcTotalPrice";
 import { GetCartFromLS } from "../../utils/getCartFromLS";
 import { RootState } from "../store";
@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       const findItem = state.items.find((obj) => obj.id === action.payload);
 
       if (findItem && findItem.count > 1) {
-         //If this type of pizza is already added to the cart and it's count more than one we decrease it
+        //If this type of pizza is already added to the cart and it's count more than one we decrease it
         findItem.count--;
         state.totalPrice = state.items.reduce((sum, obj) => {
           //Here we correct the total price
@@ -50,7 +50,7 @@ export const cartSlice = createSlice({
       //Here we remove item from cart
       state.items = state.items.filter((obj) => obj.id !== action.payload);
       state.totalPrice = calcTotalPrice(state.items);
-       //Here we get totalPrice
+      //Here we get totalPrice
     },
     clearItems(state) {
       //Here we clear our cart
