@@ -3,11 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { Basket } from './pages/Basket';
 import { Main } from './pages/Main';
 
-const App:React.FC = () => {
+const App: React.FC = () => {
   return (
     <Routes>
-      <Route path='/' element={<Main/>} />
-      <Route path='/Basket' element={<Basket/>} />
+      <Route path='/' element={<Main />} />
+      <Route path='/Basket' element={<Basket />} />
     </Routes>
   );
 };
